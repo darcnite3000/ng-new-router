@@ -1,15 +1,9 @@
-import {logme} from './other';
+import angular from 'angular';
+import {AppController} from './app';
+import {WelcomeController} from './welcome/welcome'
 
-@logme
-class Foo{
-	constructor(){
-		this.baz = "foo";
-	}
-	@logme
-	blab(){
-		console.log(this.baz);
-	}
-}
+import 'angular-new-router';
 
-let foo = new Foo;
-foo.blab();
+angular.module('routable', ['ngNewRouter'])
+	.controller('AppController', AppController)
+	.controller('WelcomeController', WelcomeController)
